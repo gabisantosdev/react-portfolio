@@ -1,0 +1,46 @@
+@import url(./typography.css);
+@import "tailwindcss";
+
+@theme {
+  --color-gabiZinc-50: oklch(98.5% 0.002 247.839);
+  --color-gabiZinc-100: oklch(96.7% 0.003 264.542);
+  --color-gabiZinc-200: oklch(92.8% 0.006 264.531);
+  --color-gabiZinc-300: oklch(87.1% 0.01 258.338);
+  --color-gabiZinc-400: oklch(70.7% 0.022 261.325);
+  --color-gabiZinc-500: oklch(55.2% 0.016 285.938);
+  --color-gabiZinc-600: oklch(44.2% 0.017 285.786);
+  --color-gabiZinc-700: oklch(37% 0.013 285.805);
+  --color-gabiZinc-800: oklch(27.4% 0.006 286.033);
+  --color-gabiZinc-900: oklch(21% 0.006 285.885);
+  --color-gabiZinc-950: oklch(14.1% 0.005 285.823);
+
+  --color-gabiBlue-50: oklch(97% 0.014 254.604);
+  --color-gabiBlue-100: oklch(93.2% 0.032 255.585);
+  --color-gabiBlue-200: oklch(88.2% 0.059 254.128);
+  --color-gabiBlue-300: oklch(80.9% 0.105 251.813);
+  --color-gabiBlue-400: oklch(70.7% 0.165 254.624);
+  --color-gabiBlue-500: oklch(62.3% 0.214 259.815);
+  --color-gabiBlue-600: oklch(54.6% 0.245 262.881);
+  --color-gabiBlue-700: oklch(48.8% 0.243 264.376);
+  --color-gabiBlue-800: oklch(42.4% 0.199 265.638);
+  --color-gabiBlue-900: oklch(37.9% 0.146 265.522);
+  --color-gabiBlue-950: oklch(28.2% 0.091 267.935);
+}
+
+
+* {
+	box-sizing: border-box;
+}
+
+html,
+body,
+#app {
+   font-family: Inter, sans-serif;
+   font-weight: 400;
+
+	min-height: 100%;
+}
+
+body {
+	margin: 0;
+}
