@@ -1,5 +1,6 @@
 @import url(./typography.css);
-@import "tailwindcss";
+/* @import "tailwindcss"; */
+@layer reset, base, tokens, recipes, utilities;
 
 @theme {
   --color-gabiZinc-50: oklch(98.5% 0.002 247.839);
@@ -43,4 +44,5 @@ body,
 
 body {
 	margin: 0;
+  background-color: oklch(98.5% 0.002 247.839);
 }

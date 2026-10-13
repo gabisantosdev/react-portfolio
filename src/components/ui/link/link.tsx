@@ -1,44 +1,81 @@
 import { Link, type LinkComponentProps } from '@tanstack/react-router';
-import { cn } from 'cn';
 import type { ComponentProps } from 'react';
+import { css, cva, cx, type RecipeVariantProps } from '~/css';
 
-const linkBase =
-	'text-[1em] font-medium text-center py-5 px-8 rounded-xl border border-solid transition-colors duration-300 ease-in-out';
+const LinkStyle = cva({
+	base: {
+		fontSize: '1rem',
+		fontWeight: 'medium',
+		textAlign: 'center',
+		paddingBlock: '5',
+		paddingInline: '8',
+		rounded: 'xl',
+		borderWidth: '1px',
+		borderStyle: 'solid',
+		transition: 'background-color 0.3s ease-in-out',
+	},
 
-const colorVariants = {
-	light: 'border-gabiZinc-200 text-gabiZinc-950 hover:bg-gabiZinc-100',
-	dark: 'border-gabiZinc-950 text-gabiZinc-50 bg-gabiZinc-950 hover:bg-gabiZinc-700',
-	accent:
-		'border-gabiZinc-600 text-gabiZinc-50 bg-gabiBlue-600 shadow-[0_4px_20px_0_rgba(21,93,252,0.5)] hover:bg-gabiBlue-500',
-} as const;
+	variants: {
+		visual: {
+			light: {
+				borderColor: 'gabiZinc.200',
+				color: 'gabiZinc.950',
+				_hover: {
+					backgroundColor: 'gabiZinc.100',
+				},
+			},
+			dark: {
+				borderColor: 'gabiZinc.950',
+				color: 'gabiZinc.50',
+				backgroundColor: 'gabiBlue.900',
+				_hover: {
+					backgroundColor: 'gabiBlue.700',
+				},
+			},
+			accent: {
+				borderColor: 'gabiBlue.500',
+				color: 'gabiZinc.50',
+				backgroundColor: 'gabiBlue.600',
+				boxShadow: '0 4px 20px 0 rgba(21,93,252,0.5)',
+				_hover: {
+					backgroundColor: 'gabiBlue.500',
+				},
+			},
+		},
+	},
+	defaultVariants: {
+		visual: 'light',
+	},
+});
 
-type ColorVariant = keyof typeof colorVariants;
+const LinkContainerStyle = css({
+	display: 'grid',
+	gridTemplateColumns: '1fr',
+	gap: '5',
+
+	sm: {
+		gridTemplateColumns: 'repeat(2, minmax(0, 1fr))',
+	},
+});
 
 function LinkInternal({
-	variant = 'light',
+	visual,
 	className,
 	...props
-}: LinkComponentProps & { variant: ColorVariant }) {
-	return (
-		<Link
-			className={cn(linkBase, colorVariants[variant], className)}
-			{...props}
-		/>
-	);
+}: LinkComponentProps & RecipeVariantProps<typeof LinkStyle>) {
+	return <Link className={cx(LinkStyle({ visual }), className)} {...props} />;
 }
 
 function LinkExternal({
-	variant = 'light',
+	visual,
 	className,
 	...props
-}: ComponentProps<'a'> & { variant: ColorVariant }) {
-	return (
-		<a className={cn(linkBase, colorVariants[variant], className)} {...props} />
-	);
+}: ComponentProps<'a'> & RecipeVariantProps<typeof LinkStyle>) {
+	return <a className={cx(LinkStyle({ visual }), className)} {...props} />;
 }
 
 function LinkContainer({ className, ...props }: ComponentProps<'div'>) {
-	return <div className={cn('grid grid-cols-2 gap-5', className)} {...props} />;
+	return <div className={cx(LinkContainerStyle, className)} {...props} />;
 }
 
 export { LinkContainer, LinkExternal, LinkInternal };

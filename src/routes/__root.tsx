@@ -1,6 +1,16 @@
-import { createRootRoute, HeadContent, Scripts } from '@tanstack/react-router';
-
+import {
+	createRootRoute,
+	HeadContent,
+	Outlet,
+	Scripts,
+} from '@tanstack/react-router';
+import { css } from '~/css';
 import appCss from '../styles/main.css?url';
+
+const ErrorBoundaryStyle = css({
+	fontSize: '2rem',
+	color: 'gabiBlue.500',
+});
 
 export const Route = createRootRoute({
 	head: () => ({
@@ -27,7 +37,8 @@ export const Route = createRootRoute({
 			},
 		],
 	}),
-	shellComponent: RootDocument,
+	shellComponent: RootComponent,
+	errorComponent: ErrorBoundary,
 });
 
 function RootDocument({ children }: { children: React.ReactNode }) {
@@ -42,4 +53,16 @@ function RootDocument({ children }: { children: React.ReactNode }) {
 			</body>
 		</html>
 	);
+}
+
+function RootComponent() {
+	return (
+		<RootDocument>
+			<Outlet />
+		</RootDocument>
+	);
+}
+
+function ErrorBoundary() {
+	return <p className={ErrorBoundaryStyle}>Oooopps!</p>;
 }

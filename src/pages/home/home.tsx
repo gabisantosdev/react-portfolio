@@ -1,4 +1,4 @@
-import { Avatar } from '#/components/ui/avatar/avatar';
+import Avatar from '#/components/ui/avatar/avatar';
 import { LinkContainer, LinkInternal } from '#/components/ui/link/link';
 import { Section } from '#/components/ui/section/section';
 import {
@@ -20,10 +20,10 @@ export default function HomePage() {
 					gerar resultados.
 				</TextDescription>
 				<LinkContainer>
-					<LinkInternal variant='accent' to='/'>
+					<LinkInternal visual='accent' to='/'>
 						Começar projeto
 					</LinkInternal>
-					<LinkInternal variant='light' to='/'>
+					<LinkInternal visual='light' to='/'>
 						Ver cases
 					</LinkInternal>
 				</LinkContainer>
