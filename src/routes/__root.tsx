@@ -1,11 +1,19 @@
+import Cta from '#/components/layout/cta/cta';
 import {
 	createRootRoute,
 	HeadContent,
 	Outlet,
 	Scripts,
+	useMatches,
 } from '@tanstack/react-router';
 import { css } from '~/css';
 import appCss from '../styles/main.css?url';
+
+declare module '@tanstack/react-router' {
+	interface StaticDataRouteOption {
+		showCta?: boolean;
+	}
+}
 
 const ErrorBoundaryStyle = css({
 	fontSize: '2rem',
@@ -56,9 +64,14 @@ function RootDocument({ children }: { children: React.ReactNode }) {
 }
 
 function RootComponent() {
+	const showCta = useMatches({
+		select: (matches) => !matches.some((m) => m.staticData.showCta),
+	});
+
 	return (
 		<RootDocument>
 			<Outlet />
+			{showCta ? <Cta /> : null}
 		</RootDocument>
 	);
 }
