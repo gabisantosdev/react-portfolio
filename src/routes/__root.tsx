@@ -1,5 +1,6 @@
 import Cta from '#/components/layout/cta/cta';
 import Header from '#/components/layout/header/header';
+import ScrollProgress from '#/components/ui/effects/scroll-progress';
 import {
 	createRootRoute,
 	ErrorComponent,
@@ -67,6 +68,7 @@ function RootComponent() {
 
 	return (
 		<RootDocument>
+			<ScrollProgress />
 			<Header />
 			<Outlet />
 			{showCta ? <Cta /> : null}

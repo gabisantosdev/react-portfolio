@@ -25,7 +25,6 @@ import {
 } from '#/features/services/components/service';
 import { Services } from '#/features/services/data/services.data';
 import { css } from '~/css';
-
 export default function HomePage() {
 	return (
 		<>
