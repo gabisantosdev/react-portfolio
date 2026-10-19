@@ -1,3 +1,4 @@
+import ContactPage from '#/pages/contact/contact';
 import { createFileRoute } from '@tanstack/react-router';
 
 export const Route = createFileRoute('/contact')({
@@ -8,5 +9,5 @@ export const Route = createFileRoute('/contact')({
 });
 
 function RouteComponent() {
-	return <div>Hello "/contact"!</div>;
+	return <ContactPage />;
 }

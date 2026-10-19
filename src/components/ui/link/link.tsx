@@ -88,3 +88,11 @@ export const LinkContainer = ({
 }: ComponentProps<'div'>) => (
 	<div className={cx(LinkContainerStyle, className)} {...props} />
 );
+
+export const Button = ({
+	visual,
+	className,
+	...props
+}: ComponentProps<'button'> & RecipeVariantProps<typeof LinkStyle>) => (
+	<button className={cx(LinkStyle({ visual }), className)} {...props} />
+);
