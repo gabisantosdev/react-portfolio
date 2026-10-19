@@ -5,7 +5,7 @@ import { css, cx } from '~/css';
 const ProjectContainerStyle = css({
 	display: 'grid',
 	gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))',
-	gap: '40px',
+	gap: '20px',
 });
 
 const ProjectCardStyle = css({
@@ -59,6 +59,37 @@ const ProjectCardContentSubtitleStyle = css({
 	color: 'gabiZinc.300',
 });
 
+const ProjectInfoContainerStyle = css({
+	display: 'flex',
+	flexDirection: 'column',
+	justifyContent: 'center',
+	gap: '32px',
+	width: '100%',
+
+	sm: {
+		flexDirection: 'row',
+		gap: '64px',
+	},
+});
+
+const ProjectInfoStyle = css({
+	display: 'flex',
+	flexDirection: 'column',
+	gap: '10px',
+});
+
+const ProjectInfoTitleStyle = css({
+	fontSize: '0.75rem',
+	letterSpacing: '0.125em',
+	textTransform: 'uppercase',
+	color: 'gabiZinc.500',
+});
+
+const ProjectInfoDescriptionStyle = css({
+	fontSize: '1rem',
+	color: 'gabiZinc.950',
+});
+
 export const ProjectContainer = ({
 	className,
 	...props
@@ -101,37 +132,6 @@ export const ProjectCardContentSubtitle = ({
 }: ComponentProps<'p'>) => (
 	<p className={cx(ProjectCardContentSubtitleStyle, className)} {...props} />
 );
-
-const ProjectInfoContainerStyle = css({
-	display: 'flex',
-	flexDirection: 'column',
-	justifyContent: 'center',
-	gap: '32px',
-	width: '100%',
-
-	sm: {
-		flexDirection: 'row',
-		gap: '64px',
-	},
-});
-
-const ProjectInfoStyle = css({
-	display: 'flex',
-	flexDirection: 'column',
-	gap: '10px',
-});
-
-const ProjectInfoTitleStyle = css({
-	fontSize: '0.75rem',
-	letterSpacing: '0.125em',
-	textTransform: 'uppercase',
-	color: 'gabiZinc.500',
-});
-
-const ProjectInfoDescriptionStyle = css({
-	fontSize: '1rem',
-	color: 'gabiZinc.950',
-});
 
 export const ProjectInfoContainer = ({
 	className,

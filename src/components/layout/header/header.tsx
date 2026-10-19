@@ -20,8 +20,8 @@ const HeaderRootStyle = css({
 
 	width: '100%',
 
-	bg: 'gabiZinc.50/80',
-	backdropFilter: 'blur(16px)',
+	bg: 'gabiZinc.50/70',
+	backdropFilter: 'blur(12px)',
 });
 
 const HeaderContainerStyle = css({
