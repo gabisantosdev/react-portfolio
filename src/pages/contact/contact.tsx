@@ -44,6 +44,13 @@ export default function ContactPage() {
 					<Option value='urgent'>Urgente</Option>
 				</Select>
 
+				<Select name='budget' defaultValue=''>
+					<Option value='' disabled>
+						Orçamento para o projeto
+					</Option>
+					<Option value='1k-2k'>R$ 1.000,00 até R$ 2.000,00</Option>
+				</Select>
+
 				<Textarea
 					name='message'
 					placeholder='Conte brevemente sobre o seu projeto...'
