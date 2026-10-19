@@ -1,4 +1,5 @@
 import Cta from '#/components/layout/cta/cta';
+import Header from '#/components/layout/header/header';
 import {
 	createRootRoute,
 	ErrorComponent,
@@ -66,6 +67,7 @@ function RootComponent() {
 
 	return (
 		<RootDocument>
+			<Header />
 			<Outlet />
 			{showCta ? <Cta /> : null}
 		</RootDocument>

@@ -1,4 +1,5 @@
 @import url(./typography.css);
+
 /* @import "tailwindcss"; */
 @layer reset, base, tokens, recipes, utilities;
 
@@ -27,7 +28,6 @@
   --color-gabiBlue-900: oklch(37.9% 0.146 265.522);
   --color-gabiBlue-950: oklch(28.2% 0.091 267.935);
 }
-
 
 * {
 	box-sizing: border-box;

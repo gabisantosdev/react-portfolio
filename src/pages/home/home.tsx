@@ -86,7 +86,7 @@ export default function HomePage() {
 				</TextDescription>
 			</Section>
 
-			<Section aria-label='Services'>
+			<Section aria-label='Services' id='services'>
 				<TextTag>Serviços</TextTag>
 				<TextTitleSecondary>Tudo claro antes de começar.</TextTitleSecondary>
 				<TextDescription>
