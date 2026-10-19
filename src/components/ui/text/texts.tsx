@@ -51,25 +51,25 @@ const TextInfoStyle = css({
 	color: 'gabiZinc.400',
 });
 
-function TextTitleHero({ className, ...props }: ComponentProps<'h1'>) {
-	return <h1 className={cx(TextTitleHeroStyle, className)} {...props} />;
-}
+const TextTitleHero = ({ className, ...props }: ComponentProps<'h1'>) => (
+	<h1 className={cx(TextTitleHeroStyle, className)} {...props} />
+);
 
-function TextTitleSecondary({ className, ...props }: ComponentProps<'h2'>) {
-	return <h2 className={cx(TextTitleSecondaryStyle, className)} {...props} />;
-}
+const TextTitleSecondary = ({ className, ...props }: ComponentProps<'h2'>) => (
+	<h2 className={cx(TextTitleSecondaryStyle, className)} {...props} />
+);
 
-function TextTag({ className, ...props }: ComponentProps<'p'>) {
-	return <p className={cx(TextTagStyle, className)} {...props} />;
-}
+const TextTag = ({ className, ...props }: ComponentProps<'p'>) => (
+	<p className={cx(TextTagStyle, className)} {...props} />
+);
 
-function TextDescription({ className, ...props }: ComponentProps<'p'>) {
-	return <p className={cx(TextDescriptionStyle, className)} {...props} />;
-}
+const TextDescription = ({ className, ...props }: ComponentProps<'p'>) => (
+	<p className={cx(TextDescriptionStyle, className)} {...props} />
+);
 
-function TextInfo({ className, ...props }: ComponentProps<'p'>) {
-	return <p className={cx(TextInfoStyle, className)} {...props} />;
-}
+const TextInfo = ({ className, ...props }: ComponentProps<'p'>) => (
+	<p className={cx(TextInfoStyle, className)} {...props} />
+);
 
 export {
 	TextDescription,

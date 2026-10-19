@@ -59,45 +59,39 @@ const ProjectCardContentSubtitleStyle = css({
 	color: 'gabiZinc.300',
 });
 
-function ProjectContainer({ className, ...props }: ComponentProps<'div'>) {
-	return <div className={cx(ProjectContainerStyle, className)} {...props} />;
-}
+const ProjectContainer = ({ className, ...props }: ComponentProps<'div'>) => (
+	<div className={cx(ProjectContainerStyle, className)} {...props} />
+);
 
-function ProjectCard({ className, ...props }: LinkComponentProps) {
-	return <Link className={cx(ProjectCardStyle, className)} {...props} />;
-}
+const ProjectCard = ({ className, ...props }: LinkComponentProps) => (
+	<Link className={cx(ProjectCardStyle, className)} {...props} />
+);
 
-function ProjectCardImage({ className, ...props }: ComponentProps<'img'>) {
-	return (
-		<img
-			className={cx(ProjectCardImageStyle, className)}
-			alt='Project'
-			{...props}
-		/>
-	);
-}
+const ProjectCardImage = ({ className, ...props }: ComponentProps<'img'>) => (
+	<img
+		className={cx(ProjectCardImageStyle, className)}
+		alt='Project'
+		{...props}
+	/>
+);
 
-function ProjectCardContent({ className, ...props }: ComponentProps<'div'>) {
-	return <div className={cx(ProjectCardContentStyle, className)} {...props} />;
-}
+const ProjectCardContent = ({ className, ...props }: ComponentProps<'div'>) => (
+	<div className={cx(ProjectCardContentStyle, className)} {...props} />
+);
 
-function ProjectCardContentTitle({
+const ProjectCardContentTitle = ({
 	className,
 	...props
-}: ComponentProps<'h3'>) {
-	return (
-		<h3 className={cx(ProjectCardContentTitleStyle, className)} {...props} />
-	);
-}
+}: ComponentProps<'h3'>) => (
+	<h3 className={cx(ProjectCardContentTitleStyle, className)} {...props} />
+);
 
-function ProjectCardContentSubtitle({
+const ProjectCardContentSubtitle = ({
 	className,
 	...props
-}: ComponentProps<'p'>) {
-	return (
-		<p className={cx(ProjectCardContentSubtitleStyle, className)} {...props} />
-	);
-}
+}: ComponentProps<'p'>) => (
+	<p className={cx(ProjectCardContentSubtitleStyle, className)} {...props} />
+);
 
 export {
 	ProjectCard,

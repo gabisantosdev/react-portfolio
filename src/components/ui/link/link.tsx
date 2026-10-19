@@ -58,24 +58,25 @@ const LinkContainerStyle = css({
 	},
 });
 
-function LinkInternal({
+export const LinkInternal = ({
 	visual,
 	className,
 	...props
-}: LinkComponentProps & RecipeVariantProps<typeof LinkStyle>) {
-	return <Link className={cx(LinkStyle({ visual }), className)} {...props} />;
-}
+}: LinkComponentProps & RecipeVariantProps<typeof LinkStyle>) => (
+	<Link className={cx(LinkStyle({ visual }), className)} {...props} />
+);
 
-function LinkExternal({
+export const LinkExternal = ({
 	visual,
 	className,
 	...props
-}: ComponentProps<'a'> & RecipeVariantProps<typeof LinkStyle>) {
-	return <a className={cx(LinkStyle({ visual }), className)} {...props} />;
-}
+}: ComponentProps<'a'> & RecipeVariantProps<typeof LinkStyle>) => (
+	<a className={cx(LinkStyle({ visual }), className)} {...props} />
+);
 
-function LinkContainer({ className, ...props }: ComponentProps<'div'>) {
-	return <div className={cx(LinkContainerStyle, className)} {...props} />;
-}
-
-export { LinkContainer, LinkExternal, LinkInternal };
+export const LinkContainer = ({
+	className,
+	...props
+}: ComponentProps<'div'>) => (
+	<div className={cx(LinkContainerStyle, className)} {...props} />
+);

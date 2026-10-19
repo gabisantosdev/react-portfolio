@@ -26,14 +26,13 @@ const SectionInfoContainerStyle = css({
 	sm: { flexDirection: 'row' },
 });
 
-function Section({ className, ...props }: ComponentProps<'section'>) {
-	return <section className={cx(SectionStyle, className)} {...props} />;
-}
+export const Section = ({ className, ...props }: ComponentProps<'section'>) => (
+	<section className={cx(SectionStyle, className)} {...props} />
+);
 
-function SectionInfoContainer({ className, ...props }: ComponentProps<'div'>) {
-	return (
-		<div className={cx(SectionInfoContainerStyle, className)} {...props} />
-	);
-}
-
-export { Section, SectionInfoContainer };
+export const SectionInfoContainer = ({
+	className,
+	...props
+}: ComponentProps<'div'>) => (
+	<div className={cx(SectionInfoContainerStyle, className)} {...props} />
+)

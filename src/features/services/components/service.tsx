@@ -42,27 +42,28 @@ const ServiceCardDescriptionStyle = css({
 	color: 'gabiZinc.500',
 });
 
-function ServiceCard({ className, ...props }: ComponentProps<'div'>) {
-	return <div className={cx(ServiceCardStyle, className)} {...props} />;
-}
+const ServiceCard = ({ className, ...props }: ComponentProps<'div'>) => (
+	<div className={cx(ServiceCardStyle, className)} {...props} />
+);
 
-function ServiceCardIcon({ className, ...props }: ComponentProps<'div'>) {
-	return <div className={cx(ServiceCardIconStyle, className)} {...props} />;
-}
+const ServiceCardIcon = ({ className, ...props }: ComponentProps<'div'>) => (
+	<div className={cx(ServiceCardIconStyle, className)} {...props} />
+);
 
-function ServiceCardId({ className, ...props }: ComponentProps<'span'>) {
-	return <span className={cx(ServiceCardIdStyle, className)} {...props} />;
-}
+const ServiceCardId = ({ className, ...props }: ComponentProps<'span'>) => (
+	<span className={cx(ServiceCardIdStyle, className)} {...props} />
+);
 
-function ServiceCardTitle({ className, ...props }: ComponentProps<'h3'>) {
-	return <h3 className={cx(ServiceCardTitleStyle, className)} {...props} />;
-}
+const ServiceCardTitle = ({ className, ...props }: ComponentProps<'h3'>) => (
+	<h3 className={cx(ServiceCardTitleStyle, className)} {...props} />
+);
 
-function ServiceCardDescription({ className, ...props }: ComponentProps<'p'>) {
-	return (
-		<p className={cx(ServiceCardDescriptionStyle, className)} {...props} />
-	);
-}
+const ServiceCardDescription = ({
+	className,
+	...props
+}: ComponentProps<'p'>) => (
+	<p className={cx(ServiceCardDescriptionStyle, className)} {...props} />
+);
 
 export {
 	ServiceCard,

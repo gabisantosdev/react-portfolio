@@ -1,12 +1,13 @@
 import Cta from '#/components/layout/cta/cta';
 import {
 	createRootRoute,
+	ErrorComponent,
+	type ErrorComponentProps,
 	HeadContent,
 	Outlet,
 	Scripts,
 	useMatches,
 } from '@tanstack/react-router';
-import { css } from '~/css';
 import appCss from '../styles/main.css?url';
 
 declare module '@tanstack/react-router' {
@@ -14,11 +15,6 @@ declare module '@tanstack/react-router' {
 		showCta?: boolean;
 	}
 }
-
-const ErrorBoundaryStyle = css({
-	fontSize: '2rem',
-	color: 'gabiBlue.500',
-});
 
 export const Route = createRootRoute({
 	head: () => ({
@@ -76,6 +72,6 @@ function RootComponent() {
 	);
 }
 
-function ErrorBoundary() {
-	return <p className={ErrorBoundaryStyle}>Oooopps!</p>;
+function ErrorBoundary({ error }: ErrorComponentProps) {
+	return <ErrorComponent error={error} />;
 }
