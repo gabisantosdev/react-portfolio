@@ -19,6 +19,9 @@ const HeaderRootStyle = css({
 	gap: '40px',
 
 	width: '100%',
+
+	bg: 'gabiZinc.50/80',
+	backdropFilter: 'blur(16px)',
 });
 
 const HeaderContainerStyle = css({
@@ -33,7 +36,6 @@ const HeaderContainerStyle = css({
 	border: '1px solid',
 	borderColor: 'gabiZinc.300',
 	borderTop: '0px',
-	bg: 'gabiZinc.50',
 });
 
 const HeaderContentStyle = css({
