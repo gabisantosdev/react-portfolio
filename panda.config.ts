@@ -11,6 +11,14 @@ export default defineConfig({
       scrollbarColor: 'token(colors.gabiBlue.600) transparent'
     }
   },
+  utilities: {
+    extend: {
+      cornerShape: {
+        className: 'corner-shape',
+        values: ['round', 'squircle', 'bevel', 'scoop', 'notch', 'square'],
+      },
+    },
+  },
   theme: {
     extend: {
       tokens: {
@@ -39,7 +47,7 @@ export default defineConfig({
             600: { value: 'oklch(54.6% 0.245 262.881)' },
             700: { value: 'oklch(48.8% 0.243 264.376)' },
             800: { value: 'oklch(42.4% 0.199 265.638)' },
-            900: { value: 'oklch(37.9% 0.146 265.522)' },
+            900: { value: 'oklch(37.9% 0.146 265.522)' }, 
             950: { value: 'oklch(28.2% 0.091 267.935)' },
           },
         }

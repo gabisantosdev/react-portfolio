@@ -26,67 +26,76 @@ import { projects } from '#/features/projects/data/projects.data';
 import { Route } from '#/routes/cases/$case';
 
 export default function CasePage() {
-	const { project } = Route.useLoaderData();
+	const { caseProject } = Route.useLoaderData();
 
 	return (
 		<>
 			<Section>
-				<TextTitleHero>{project?.name}</TextTitleHero>
-				<TextDescription>{project?.description}</TextDescription>
+				<TextTitleHero>{caseProject?.name}</TextTitleHero>
+				<TextDescription>{caseProject?.description}</TextDescription>
 				<LinkContainer>
 					<LinkInternal visual='accent' to='/contact'>
 						Vamos conversar
 					</LinkInternal>
-					{project?.url && (
-						<LinkExternal href={project?.url}>Ver no ar</LinkExternal>
+					{caseProject?.url && (
+						<LinkExternal href={caseProject?.url}>Ver no ar</LinkExternal>
 					)}
 				</LinkContainer>
 				<ProjectInfoContainer>
 					<ProjectInfo>
 						<ProjectInfoTitle>Tipo de projeto</ProjectInfoTitle>
-						<ProjectInfoDescription>{project?.category}</ProjectInfoDescription>
+						<ProjectInfoDescription>
+							{caseProject?.category}
+						</ProjectInfoDescription>
 					</ProjectInfo>
 
 					<ProjectInfo>
 						<ProjectInfoTitle>Seguimento</ProjectInfoTitle>
-						<ProjectInfoDescription>{project?.segment}</ProjectInfoDescription>
+						<ProjectInfoDescription>
+							{caseProject?.segment}
+						</ProjectInfoDescription>
 					</ProjectInfo>
 
 					<ProjectInfo>
 						<ProjectInfoTitle>Tecnologias</ProjectInfoTitle>
 						<ProjectInfoDescription>
-							{project?.technologies.join(' · ')}
+							{caseProject?.technologies.join(' · ')}
 						</ProjectInfoDescription>
 					</ProjectInfo>
 				</ProjectInfoContainer>
 
-				<ProjectCardImage src={project?.image} />
+				<ProjectCardImage src={caseProject?.image} />
 			</Section>
 
 			<Section>
 				<TextTag>Mais cases</TextTag>
 				<TextTitleSecondary>Veja outros projetos</TextTitleSecondary>
 				<ProjectContainer>
-					{projects.slice(0, 2).map((project) => (
-						<ProjectCard
-							to='/cases/$case'
-							params={{
-								case: project.slug,
-							}}
-							key={project.id}
-						>
-							<ProjectCardImage src={project.image} alt={project.alt} />
+					{projects
+						.filter((project) => project.slug !== caseProject?.slug)
+						.slice(0, 2)
+						.map((project) => {
+							return (
+								<ProjectCard
+									to='/cases/$case'
+									params={{
+										case: project.slug,
+									}}
+									key={project.id}
+								>
+									<ProjectCardImage src={project.image} alt={project.alt} />
 
-							<ProjectCardContent>
-								<ProjectCardContentTitle>
-									{project.name}
-								</ProjectCardContentTitle>
-								<ProjectCardContentSubtitle>
-									{project.category}
-								</ProjectCardContentSubtitle>
-							</ProjectCardContent>
-						</ProjectCard>
-					))}
+									<ProjectCardContent>
+										<ProjectCardContentTitle>
+											{project.name}
+										</ProjectCardContentTitle>
+										<ProjectCardContentSubtitle>
+											{project.category}
+										</ProjectCardContentSubtitle>
+									</ProjectCardContent>
+								</ProjectCard>
+							);
+						})}
 				</ProjectContainer>
 			</Section>
 		</>

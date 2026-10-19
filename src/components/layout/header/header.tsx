@@ -74,17 +74,19 @@ const HeaderButtonStyle = css({
 
 	padding: '12px',
 
-	borderRadius: '10px',
+	cornerShape: 'squircle',
+	borderRadius: '20px',
 
 	color: 'gabiZinc.50',
 	bg: 'gabiBlue.600',
 
 	boxShadow: '0 4px 10px 0 rgba(21, 93, 252, 0.5)',
 
-	transition: 'background-color 0.3s ease-in-out',
+	transition: 'background-color 0.3s ease-in-out, box-shadow 0.3s ease-in-out',
 
 	_hover: {
 		bg: 'gabiBlue.500',
+		boxShadow: '0 4px 20px 0 oklch(62.3% 0.214 259.815 / 50%)',
 	},
 });
 

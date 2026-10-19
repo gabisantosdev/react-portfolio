@@ -5,9 +5,9 @@ import { createFileRoute } from '@tanstack/react-router';
 export const Route = createFileRoute('/cases/$case')({
 	component: RouteComponent,
 	loader: ({ params }) => {
-		const projectSlug = params.case;
-		const project = projects.find((project) => project.slug === projectSlug);
-		return { project };
+		const caseSlug = params.case;
+		const caseProject = projects.find((project) => project.slug === caseSlug);
+		return { caseProject };
 	},
 });
 

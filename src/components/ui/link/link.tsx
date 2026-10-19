@@ -7,13 +7,16 @@ const LinkStyle = cva({
 		fontSize: '1rem',
 		fontWeight: 'medium',
 		textAlign: 'center',
+
 		paddingBlock: '5',
 		paddingInline: '8',
-		rounded: 'xl',
+
+		cornerShape: 'squircle',
+		rounded: '3xl',
 		borderWidth: '1px',
 		borderStyle: 'solid',
 		transition:
-			'background-color 0.3s ease-in-out, border-color 0.3s ease-in-out',
+			'background-color 0.3s ease-in-out, border-color 0.3s ease-in-out, box-shadow 0.3s ease-in-out',
 	},
 
 	variants: {
@@ -21,6 +24,7 @@ const LinkStyle = cva({
 			light: {
 				borderColor: 'gabiZinc.200',
 				color: 'gabiZinc.950',
+
 				_hover: {
 					borderColor: 'gabiBlue.600',
 					backgroundColor: 'gabiZinc.100',
@@ -30,8 +34,11 @@ const LinkStyle = cva({
 				borderColor: 'gabiZinc.950',
 				color: 'gabiZinc.50',
 				backgroundColor: 'gabiBlue.900',
+				boxShadow: '0 4px 20px 0 oklch(37.9% 0.146 265.522 / 50%)',
+
 				_hover: {
 					backgroundColor: 'gabiBlue.700',
+					boxShadow: '0 4px 20px 0 oklch(48.8% 0.243 264.376 / 50%)',
 				},
 			},
 			accent: {
@@ -39,8 +46,10 @@ const LinkStyle = cva({
 				color: 'gabiZinc.50',
 				backgroundColor: 'gabiBlue.600',
 				boxShadow: '0 4px 20px 0 rgba(21,93,252,0.5)',
+
 				_hover: {
 					backgroundColor: 'gabiBlue.500',
+					boxShadow: '0 4px 20px 0 oklch(62.3% 0.214 259.815 / 50%)',
 				},
 			},
 		},

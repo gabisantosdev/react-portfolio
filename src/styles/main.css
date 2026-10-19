@@ -45,3 +45,8 @@ body {
 	margin: 0;
   background-color: oklch(98.5% 0.002 247.839);
 }
+/* 
+button, a {
+	border-radius: 24px;
+	corner-shape: squircle;
+} */
