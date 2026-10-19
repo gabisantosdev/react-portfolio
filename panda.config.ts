@@ -5,6 +5,12 @@ export default defineConfig({
   preflight: true,
   include: ['./src/**/*.{js,jsx,ts,tsx}', './pages/**/*.{js,jsx,ts,tsx}'],
   exclude: [],
+  globalCss: {
+    html: {
+      scrollbarWidth: 'thin',
+      scrollbarColor: 'token(colors.gabiBlue.600) transparent'
+    }
+  },
   theme: {
     extend: {
       tokens: {
