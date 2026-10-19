@@ -59,15 +59,21 @@ const ProjectCardContentSubtitleStyle = css({
 	color: 'gabiZinc.300',
 });
 
-const ProjectContainer = ({ className, ...props }: ComponentProps<'div'>) => (
+export const ProjectContainer = ({
+	className,
+	...props
+}: ComponentProps<'div'>) => (
 	<div className={cx(ProjectContainerStyle, className)} {...props} />
 );
 
-const ProjectCard = ({ className, ...props }: LinkComponentProps) => (
+export const ProjectCard = ({ className, ...props }: LinkComponentProps) => (
 	<Link className={cx(ProjectCardStyle, className)} {...props} />
 );
 
-const ProjectCardImage = ({ className, ...props }: ComponentProps<'img'>) => (
+export const ProjectCardImage = ({
+	className,
+	...props
+}: ComponentProps<'img'>) => (
 	<img
 		className={cx(ProjectCardImageStyle, className)}
 		alt='Project'
@@ -75,29 +81,79 @@ const ProjectCardImage = ({ className, ...props }: ComponentProps<'img'>) => (
 	/>
 );
 
-const ProjectCardContent = ({ className, ...props }: ComponentProps<'div'>) => (
+export const ProjectCardContent = ({
+	className,
+	...props
+}: ComponentProps<'div'>) => (
 	<div className={cx(ProjectCardContentStyle, className)} {...props} />
 );
 
-const ProjectCardContentTitle = ({
+export const ProjectCardContentTitle = ({
 	className,
 	...props
 }: ComponentProps<'h3'>) => (
 	<h3 className={cx(ProjectCardContentTitleStyle, className)} {...props} />
 );
 
-const ProjectCardContentSubtitle = ({
+export const ProjectCardContentSubtitle = ({
 	className,
 	...props
 }: ComponentProps<'p'>) => (
 	<p className={cx(ProjectCardContentSubtitleStyle, className)} {...props} />
 );
 
-export {
-	ProjectCard,
-	ProjectCardContent,
-	ProjectCardContentSubtitle,
-	ProjectCardContentTitle,
-	ProjectCardImage,
-	ProjectContainer,
-};
+const ProjectInfoContainerStyle = css({
+	display: 'flex',
+	flexDirection: 'column',
+	justifyContent: 'center',
+	gap: '32px',
+	width: '100%',
+
+	sm: {
+		flexDirection: 'row',
+		gap: '64px',
+	},
+});
+
+const ProjectInfoStyle = css({
+	display: 'flex',
+	flexDirection: 'column',
+	gap: '10px',
+});
+
+const ProjectInfoTitleStyle = css({
+	fontSize: '0.75rem',
+	letterSpacing: '0.125em',
+	textTransform: 'uppercase',
+	color: 'gabiZinc.500',
+});
+
+const ProjectInfoDescriptionStyle = css({
+	fontSize: '1rem',
+	color: 'gabiZinc.950',
+});
+
+export const ProjectInfoContainer = ({
+	className,
+	...props
+}: ComponentProps<'div'>) => (
+	<div className={cx(ProjectInfoContainerStyle, className)} {...props} />
+);
+
+export const ProjectInfo = ({ className, ...props }: ComponentProps<'div'>) => (
+	<div className={cx(ProjectInfoStyle, className)} {...props} />
+);
+
+export const ProjectInfoTitle = ({
+	className,
+	...props
+}: ComponentProps<'h4'>) => (
+	<h4 className={cx(ProjectInfoTitleStyle, className)} {...props} />
+);
+
+export const ProjectInfoDescription = ({
+	className,
+	...props
+}: ComponentProps<'p'>) => (
+	<p className={cx(ProjectInfoDescriptionStyle, className)} {...props} />
+);

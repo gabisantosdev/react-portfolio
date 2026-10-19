@@ -12,7 +12,8 @@ const LinkStyle = cva({
 		rounded: 'xl',
 		borderWidth: '1px',
 		borderStyle: 'solid',
-		transition: 'background-color 0.3s ease-in-out',
+		transition:
+			'background-color 0.3s ease-in-out, border-color 0.3s ease-in-out',
 	},
 
 	variants: {
@@ -21,6 +22,7 @@ const LinkStyle = cva({
 				borderColor: 'gabiZinc.200',
 				color: 'gabiZinc.950',
 				_hover: {
+					borderColor: 'gabiBlue.600',
 					backgroundColor: 'gabiZinc.100',
 				},
 			},
@@ -55,6 +57,12 @@ const LinkContainerStyle = css({
 
 	sm: {
 		gridTemplateColumns: 'repeat(2, minmax(0, 1fr))',
+
+		'& > :only-child': {
+			gridColumn: '1 / -1',
+			justifySelf: 'center',
+			width: 'calc(50% - 1 / 2)',
+		},
 	},
 });
 
